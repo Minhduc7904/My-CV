@@ -7,7 +7,7 @@ export const personalInfo = {
   email: "nmduc7904@gmail.com",
   phone: "+84 392932661",
   location: "Ha Noi City, Vietnam",
-  linkedin: "linkedin.com/in/nguyenvana"
+  linkedin: "www.facebook.com/nm.duc7904"
 };
 
 // Profile Section (Professional Summary)
