@@ -52,7 +52,7 @@ function App() {
     <AppContainer>
       <PrintButton onClick={handlePrint}>Print CV</PrintButton>
       <CVContainer>
-        <Header {...cvData.personalInfo} />
+        <Header {...cvData.personalInfo} photoUrl={'470224468_1536748773663994_5966152628384594354_n.jpg'} />
 
         <Section title="Profile">
           <Profile {...cvData.profile} />

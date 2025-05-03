@@ -7,12 +7,13 @@ export const personalInfo = {
   email: "nmduc7904@gmail.com",
   phone: "+84 392932661",
   location: "Ha Noi City, Vietnam",
-  linkedin: "www.facebook.com/nm.duc7904"
+  linkedin: "www.facebook.com/nm.duc7904",
+  photoUrl: "https://via.placeholder.com/100x120" // Placeholder image - replace with your actual photo URL
 };
 
 // Profile Section (Professional Summary)
 export const profile = {
-  summary: "I am a third-year Computer Science student with a strong passion for full-stack web development. I am currently focusing on mastering modern technologies such as JavaScript, ReactJS, and Node.js to build responsive and scalable web applications. Alongside my academic studies, I actively participate in competitive programming, which helps enhance my problem-solving mindset and algorithmic thinking.I am especially passionate about applying technology in education, and I aspire to build solutions that improve learning experiences and make knowledge more accessible through digital platforms. I am currently seeking internship opportunities where I can contribute to real-world projects, learn from experienced developers, and further develop my skills as a full-stack engineer.",
+  summary: "I am a third-year Computer Science student passionate about full-stack web development, with a focus on JavaScript, ReactJS, and Node.js. I actively participate in competitive programming to sharpen my problem-solving skills. I'm especially interested in applying technology to education and am currently seeking internship opportunities to gain real-world experience and grow as a full-stack developer.",
   highlights: [
 
   ]
