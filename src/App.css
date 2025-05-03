@@ -20,6 +20,7 @@ body {
 
 @media print {
   html, body {
+    background: white;
     width: 210mm;
     height: 297mm;
     margin: 0;
@@ -34,7 +35,7 @@ body {
 
   /* Force the CV to use minimal padding when printing */
   .cv-wrapper {
-    padding: 3mm 5mm !important;
+    padding: 3mm 3mm !important;
     margin: 0 !important;
   }
 
@@ -62,7 +63,6 @@ body {
 
   /* Add a message for mobile users */
   body::before {
-    content: "For best experience, view in landscape mode";
     display: block;
     text-align: center;
     padding: 10px;

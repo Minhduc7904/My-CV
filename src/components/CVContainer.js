@@ -17,9 +17,11 @@ const CVWrapper = styled.div`
   @media print {
     box-shadow: none;
     margin: 0;
-    padding: 3mm 5mm; /* Extremely minimal padding for print to maximize space */
     width: 210mm;
     height: 297mm;
+    background: white;
+    background-color: white;
+    padding: 3mm 3mm; /* Minimal padding for printing */
   }
 `;
 
