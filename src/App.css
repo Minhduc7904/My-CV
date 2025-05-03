@@ -37,4 +37,40 @@ body {
     padding: 3mm 5mm !important;
     margin: 0 !important;
   }
+
+  .print-button {
+    display: none;
+  }
+}
+
+/* Mobile device optimizations */
+@media only screen and (max-width: 1023px) {
+  html, body {
+    min-width: 1024px; /* Force minimum width */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+  }
+
+  body {
+    zoom: 0.75; /* Scale down for better fit on small screens */
+  }
+
+  .cv-wrapper {
+    transform-origin: top left; /* Scale from top left */
+    transform: scale(0.75); /* Scale down for mobile */
+    width: 133.33%; /* Compensate for scale to maintain proportions */
+  }
+
+  /* Add a message for mobile users */
+  body::before {
+    content: "For best experience, view in landscape mode";
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
 }

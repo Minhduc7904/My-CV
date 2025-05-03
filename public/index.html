@@ -3,7 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=1024, initial-scale=1" />
+    <script>
+      // Force desktop view on mobile devices
+      (function() {
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+          var metaViewport = document.querySelector('meta[name="viewport"]');
+          if (metaViewport) {
+            metaViewport.content = 'width=1024, initial-scale=0.75, maximum-scale=2.0, user-scalable=yes';
+          }
+        }
+      })();
+    </script>
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -24,7 +36,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>My Professional CV</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
