@@ -75,6 +75,36 @@ const AwardDescription = styled.div`
 const Qualifications = ({ skills, languages, awards }) => {
   return (
     <DetailsContainer>
+
+
+      {skills && skills.length > 0 && (
+        <SubSection>
+          <SubSectionTitle>Skills</SubSectionTitle>
+          {skills.map((category, index) => (
+            <div key={index}>
+              <div style={{ fontWeight: 'bold', fontSize: '11px', marginBottom: '2px' }}>{category.name}</div>
+              <SkillsList>
+                {category.skills.map((skill, skillIndex) => (
+                  <Skill key={skillIndex}>{skill}</Skill>
+                ))}
+              </SkillsList>
+            </div>
+          ))}
+        </SubSection>
+      )}
+
+      {awards && awards.length > 0 && (
+        <SubSection>
+          <SubSectionTitle>Awards & Achievements</SubSectionTitle>
+          {awards.map((award, index) => (
+            <AwardItem key={index}>
+              <AwardName>{award.name} ({award.year})</AwardName>
+              <div style={{ fontSize: '10px' }}>{award.issuer}</div>
+              {award.description && <AwardDescription>{award.description}</AwardDescription>}
+            </AwardItem>
+          ))}
+        </SubSection>
+      )}
       <LeftColumn>
         {languages && languages.length > 0 && (
           <SubSection>
@@ -88,35 +118,6 @@ const Qualifications = ({ skills, languages, awards }) => {
           </SubSection>
         )}
       </LeftColumn>
-
-        {skills && skills.length > 0 && (
-          <SubSection>
-            <SubSectionTitle>Skills</SubSectionTitle>
-            {skills.map((category, index) => (
-              <div key={index}>
-                <div style={{ fontWeight: 'bold', fontSize: '11px', marginBottom: '2px' }}>{category.name}</div>
-                <SkillsList>
-                  {category.skills.map((skill, skillIndex) => (
-                    <Skill key={skillIndex}>{skill}</Skill>
-                  ))}
-                </SkillsList>
-              </div>
-            ))}
-          </SubSection>
-        )}
-
-        {awards && awards.length > 0 && (
-          <SubSection>
-            <SubSectionTitle>Awards & Achievements</SubSectionTitle>
-            {awards.map((award, index) => (
-              <AwardItem key={index}>
-                <AwardName>{award.name} ({award.year})</AwardName>
-                <div style={{ fontSize: '10px' }}>{award.issuer}</div>
-                {award.description && <AwardDescription>{award.description}</AwardDescription>}
-              </AwardItem>
-            ))}
-          </SubSection>
-        )}
     </DetailsContainer>
   );
 };
