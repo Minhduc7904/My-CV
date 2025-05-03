@@ -1,0 +1,70 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const HeaderContainer = styled.div`
+  margin-bottom: 12px; /* Reduced margin */
+  border-bottom: 1px solid #333;
+  padding-bottom: 8px; /* Reduced padding */
+  display: flex;
+  flex-direction: column;
+`;
+
+const NameContainer = styled.div`
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 2px;
+`;
+
+const Name = styled.h1`
+  font-size: 24px; /* Smaller font size */
+  margin: 0;
+  color: #333;
+`;
+
+const JobTitle = styled.span`
+  font-size: 16px;
+  margin-left: 10px;
+  color: #555;
+  font-weight: normal;
+`;
+
+const Title = styled.h2`
+  font-size: 16px; /* Smaller font size */
+  font-weight: normal;
+  margin: 0 0 8px 0; /* Reduced margin */
+  color: #555;
+  display: none; /* Hide the original title since we're showing it next to the name */
+`;
+
+const ContactInfo = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* Further reduced gap */
+  font-size: 10px; /* Even smaller font size */
+`;
+
+const ContactItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 3px; /* Reduced gap */
+`;
+
+const Header = ({ name, title, email, phone, location, linkedin }) => {
+  return (
+    <HeaderContainer>
+      <NameContainer>
+        <Name>{name}</Name>
+        <JobTitle>Software Developer</JobTitle>
+      </NameContainer>
+      <Title>{title}</Title>
+      <ContactInfo>
+        {email && <ContactItem><span style={{ fontSize: '9px' }}>📧</span> {email}</ContactItem>}
+        {phone && <ContactItem><span style={{ fontSize: '9px' }}>📱</span> {phone}</ContactItem>}
+        {location && <ContactItem><span style={{ fontSize: '9px' }}>📍</span> {location}</ContactItem>}
+        {linkedin && <ContactItem><span style={{ fontSize: '9px' }}>🔗</span> {linkedin}</ContactItem>}
+      </ContactInfo>
+    </HeaderContainer>
+  );
+};
+
+export default Header;
