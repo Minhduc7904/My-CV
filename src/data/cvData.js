@@ -95,7 +95,7 @@ export const details = {
   ],
   languages: [
     { language: "Vietnamese", proficiency: "Native" },
-    { language: "English", proficiency: "Fluent" },
+    { language: "English", proficiency: "Basic" },
   ],
   awards: [
     {
