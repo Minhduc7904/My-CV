@@ -8,7 +8,8 @@ export const personalInfo = {
   phone: "+84 392932661",
   location: "Ha Noi City, Vietnam",
   linkedin: "www.facebook.com/nm.duc7904",
-  photoUrl: "https://via.placeholder.com/100x120" // Placeholder image - replace with your actual photo URL
+  photoUrl: "https://via.placeholder.com/100x120", // Placeholder image - replace with your actual photo URL
+  cvUrl: "https://my-cv-ashen-seven.vercel.app/" // Online CV URL
 };
 
 // Profile Section (Professional Summary)
