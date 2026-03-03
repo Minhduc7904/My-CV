@@ -44,23 +44,25 @@ const Description = styled.div`
   margin-bottom: 4px;
 `;
 
-const Technologies = styled.div`
-  font-size: 11px; /* Smaller font size */
-  color: #0066cc;
-  font-style: italic;
-  margin-bottom: 3px;
-`;
-
 const GithubLink = styled.a`
-  font-size: 11px; /* Smaller font size */
+  font-size: 10px;
   color: #0066cc;
   text-decoration: none;
   display: block;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
+  word-break: break-all;
 
   &:hover {
     text-decoration: underline;
   }
+`;
+
+const TechnologiesLeft = styled.div`
+  font-size: 10px;
+  color: #555;
+  font-style: italic;
+  margin-top: 3px;
+  line-height: 1.3;
 `;
 
 const BulletList = styled.ul`
@@ -74,7 +76,7 @@ const BulletItem = styled.li`
   line-height: 1.3; /* Tighter line height */
 `;
 
-const ExperienceItem = ({ company, position, period, description, responsibilities, technologies, github }) => {
+const ExperienceItem = ({ company, position, period, description, responsibilities, technologies, github, githubLinks }) => {
   // Function to convert URLs in text to clickable links
   const createMarkup = (text) => {
     if (!text) return { __html: '' };
@@ -95,11 +97,26 @@ const ExperienceItem = ({ company, position, period, description, responsibiliti
         <Company>{company}</Company>
         <Position>{position}</Position>
         <Period>{period}</Period>
+        {githubLinks && githubLinks.length > 0 ? (
+          <div style={{ marginTop: '4px' }}>
+            <span style={{ fontSize: '10px', fontWeight: 'bold' }}>GitHub:</span>
+            {githubLinks.map((link, index) => (
+              <GithubLink key={index} href={link.url} target="_blank" rel="noopener noreferrer">
+                • {link.label}
+              </GithubLink>
+            ))}
+          </div>
+        ) : github ? (
+          <GithubLink href={github} target="_blank" rel="noopener noreferrer" style={{ marginTop: '4px' }}>
+            <strong>GitHub:</strong> {github}
+          </GithubLink>
+        ) : null}
+        {technologies && (
+          <TechnologiesLeft><strong>Tech:</strong> {technologies}</TechnologiesLeft>
+        )}
       </LeftColumn>
       <RightColumn>
         {description && <Description dangerouslySetInnerHTML={createMarkup(description)} />}
-        {github && <GithubLink href={github} target="_blank" rel="noopener noreferrer"><strong>GitHub:</strong> {github}</GithubLink>}
-        {technologies && <Technologies><strong>Technologies:</strong> {technologies}</Technologies>}
         {responsibilities && responsibilities.length > 0 && (
           <BulletList>
             {responsibilities.map((responsibility, index) => (

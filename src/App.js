@@ -18,6 +18,15 @@ const AppContainer = styled.div`
   min-height: 100vh;
   padding: 20px;
   background-color: #f5f5f5;
+
+  @media print {
+    background-color: white;
+    background: white;
+    padding: 0;
+    margin: 0;
+    min-height: unset;
+    display: block;
+  }
 `;
 
 const PrintButton = styled.button`
