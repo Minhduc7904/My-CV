@@ -24,28 +24,49 @@ export const profile = {
 // Employment History (Work Experience)
 export const employmentHistory = [
   {
-    company: "Beemath Website",
-    position: "Lead Developer",
-    period: "Oct 2025 - Present",
-    description: "Version 2 of the ToanThayBee platform, rebuilt with NestJS and ReactJS, serving around 1,000 active students at the learning center. The system is currently in production deployment, featuring real-time exam capabilities, an AI-assisted exam upload and processing workflow, a custom CMS, and a scalable architecture optimized for VPS hosting. The platform is live at https://beeedu.vn/ and remains under active development with ongoing feature enhancements.",
-    github: "https://github.com/Minhduc7904/admin_frontend | https://github.com/Minhduc7904/BEE | https://github.com/Minhduc7904/student-frontend",
+    company: "Beacon - Safety Social Mobile Platform",
+    position: "Full-stack Developer",
+    period: "Apr 2026 - Jun 2026",
+    description: "Built a full-stack safety-focused social platform consisting of a Flutter mobile app, a .NET 8 backend API, and a React admin dashboard. The product includes user authentication, safety check-ins, emergency contacts, friend relationships, real-time messaging, posts, reactions, reports, media uploads, notifications, and role-based administration.",
+    github: "https://github.com/Minhduc7904/Beacon | https://github.com/dongvanhao/Beacon-CA | https://github.com/Minhduc7904/Beacon_admin",
     githubLinks: [
-      { label: "Admin Frontend", url: "https://github.com/Minhduc7904/admin_frontend" },
-      { label: "Backend", url: "https://github.com/Minhduc7904/BEE" },
-      { label: "Student Frontend", url: "https://github.com/Minhduc7904/student-frontend" }
+      { label: "Mobile App", url: "https://github.com/Minhduc7904/Beacon" },
+      { label: "Backend API", url: "https://github.com/dongvanhao/Beacon-CA" },
+      { label: "Admin Dashboard", url: "https://github.com/Minhduc7904/Beacon_admin" }
     ],
     responsibilities: [
-      "Rebuilt the platform as v2 of ToanThayBee using NestJS for the backend and ReactJS (with Redux) for the frontend",
-      "Designed and implemented RESTful APIs with NestJS",
-      "Implemented real-time exam functionality using Socket.IO",
-      "Used MySQL for relational data storage",
-      "Styled UI with Tailwind CSS",
-      "Deployed the application on a VPS with Nginx as reverse proxy",
-      "Configured Cloudflare for DNS management, CDN, and security",
-      "Leveraged AI tools to assist in development while managing, reviewing, and maintaining full ownership of the codebase as tech manager"
+      "Developed the Flutter mobile app using Clean Architecture, Riverpod, GoRouter, Dio, secure storage, Isar local cache, Firebase Messaging, camera, geolocation, and media handling",
+      "Implemented a .NET 8 Web API with layered architecture, EF Core, SQL Server, JWT authentication, refresh tokens, validation, and centralized error handling",
+      "Built core user features including registration/login, profile management, friend requests, friend presence, safety check-ins, emergency contacts, posts, reactions, post reports, and media upload flows",
+      "Integrated SignalR realtime features for chat, group presence, typing indicators, seen status, unread counts, new posts, and live notifications",
+      "Designed and connected the React/Vite admin dashboard with Redux Toolkit, React Router, Axios, and Tailwind CSS for user, admin, role, permission, post, report, audit-log, statistics, and health-check management",
+      "Configured infrastructure and background services with Docker Compose, SQL Server, MinIO object storage, Nginx, Hangfire jobs, health checks, Firebase Cloud Messaging, and API documentation"
     ],
-    technologies: "ReactJS, Tailwind, Redux, NestJS, Socket.io, RESTful APIs, MySQL, Nginx, Cloudflare"
+    technologies: "Flutter, Dart, Riverpod, Dio, Isar, Firebase Messaging, .NET 8, ASP.NET Core, EF Core, SQL Server, SignalR, Hangfire, MinIO, Docker, React, TypeScript, Redux Toolkit, Tailwind CSS"
   },
+  // {
+  //   company: "Beemath Website",
+  //   position: "Lead Developer",
+  //   period: "Oct 2025 - Present",
+  //   description: "Version 2 of the ToanThayBee platform, rebuilt with NestJS and ReactJS, serving around 1,000 active students at the learning center. The system is currently in production deployment, featuring real-time exam capabilities, an AI-assisted exam upload and processing workflow, a custom CMS, and a scalable architecture optimized for VPS hosting. The platform is live at https://beeedu.vn/ and remains under active development with ongoing feature enhancements.",
+  //   github: "https://github.com/Minhduc7904/admin_frontend | https://github.com/Minhduc7904/BEE | https://github.com/Minhduc7904/student-frontend",
+  //   githubLinks: [
+  //     { label: "Admin Frontend", url: "https://github.com/Minhduc7904/admin_frontend" },
+  //     { label: "Backend", url: "https://github.com/Minhduc7904/BEE" },
+  //     { label: "Student Frontend", url: "https://github.com/Minhduc7904/student-frontend" }
+  //   ],
+  //   responsibilities: [
+  //     "Rebuilt the platform as v2 of ToanThayBee using NestJS for the backend and ReactJS (with Redux) for the frontend",
+  //     "Designed and implemented RESTful APIs with NestJS",
+  //     "Implemented real-time exam functionality using Socket.IO",
+  //     "Used MySQL for relational data storage",
+  //     "Styled UI with Tailwind CSS",
+  //     "Deployed the application on a VPS with Nginx as reverse proxy",
+  //     "Configured Cloudflare for DNS management, CDN, and security",
+  //     "Leveraged AI tools to assist in development while managing, reviewing, and maintaining full ownership of the codebase as tech manager"
+  //   ],
+  //   technologies: "ReactJS, Tailwind, Redux, NestJS, Socket.io, RESTful APIs, MySQL, Nginx, Cloudflare"
+  // },
   // {
     // company: "ToanThayBee Website",
     // position: "Lead Developer",
