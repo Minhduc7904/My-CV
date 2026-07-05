@@ -15,7 +15,7 @@ export const personalInfo = {
 
 // Profile Section (Professional Summary)
 export const profile = {
-  summary: "I am a fourth-year Computer Science student passionate about full-stack web development, with a focus on ReactJS and NestJS. I leverage AI tools to accelerate development while acting as a tech manager — reviewing, structuring, and taking full ownership of the codebase. I actively participate in competitive programming to sharpen my problem-solving skills, and I'm especially interested in applying technology to education. I am continuously expanding my skill set, with a current focus on learning CI/CD pipelines, MongoDB, Redis, and other modern backend technologies. I am currently seeking internship opportunities to grow as a full-stack developer.",
+  summary: "I am a fourth-year Computer Science student passionate about full-stack web development, with a strong focus on ReactJS and NestJS. I leverage AI tools to accelerate development while maintaining full ownership of the codebase through reviewing, structuring, and improving system design and implementation. I actively participate in competitive programming to sharpen my problem-solving skills, and I am especially interested in applying technology to education. I am continuously expanding my full-stack skill set, with a current focus on modern backend development, database design, API architecture, MongoDB, Redis, and scalable web application patterns. I am currently seeking internship opportunities to grow as a full-stack developer.",
   highlights: [
 
   ]
