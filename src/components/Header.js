@@ -73,7 +73,7 @@ const ContactItem = styled.div`
   gap: 3px; /* Reduced gap */
 `;
 
-const Header = ({ name, title, email, phone, location, facebook, linkedin, photoUrl, cvUrl }) => {
+const Header = ({ name, title, email, phone, dateOfBirth, location, facebook, linkedin, photoUrl, cvUrl }) => {
   return (
     <HeaderContainer>
       <PhotoContainer>
@@ -109,6 +109,7 @@ const Header = ({ name, title, email, phone, location, facebook, linkedin, photo
           {location && <ContactItem><span style={{ fontSize: '9px' }}>📍</span> {location}</ContactItem>}
           {facebook && <ContactItem><span style={{ fontSize: '9px' }}>📘</span> <a href={`https://${facebook}`} target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc', textDecoration: 'none' }}>{facebook}</a></ContactItem>}
           {linkedin && <ContactItem><span style={{ fontSize: '9px' }}>💼</span> <a href={`https://${linkedin}`} target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc', textDecoration: 'none' }}>{linkedin}</a></ContactItem>}
+          {dateOfBirth && <ContactItem><span style={{ fontSize: '9px' }}>DOB</span> {dateOfBirth}</ContactItem>}
           {cvUrl && (
             <ContactItem>
               <span style={{ fontSize: '9px' }}>📄</span>

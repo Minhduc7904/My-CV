@@ -16,7 +16,7 @@ const LeftColumn = styled.div`
 `;
 
 const RightColumn = styled.div`
-  flex: 0 0 35%;
+  flex: 0 0 42%;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -53,6 +53,13 @@ const LanguageItem = styled.div`
   margin-bottom: 2px;
 `;
 
+const LanguageNote = styled.div`
+  font-size: 10px;
+  font-style: italic;
+  color: #555;
+  margin: -1px 0 3px 0;
+`;
+
 const AwardItem = styled.div`
   margin-bottom: 4px;
 `;
@@ -60,6 +67,7 @@ const AwardItem = styled.div`
 const AwardName = styled.div`
   font-weight: bold;
   font-size: 11px;
+  color: ${({ $highlighted }) => ($highlighted ? '#c99700' : 'inherit')};
 `;
 
 const AwardDescription = styled.div`
@@ -100,7 +108,7 @@ const Qualifications = ({ skills, languages, awards }) => {
           <SubSectionTitle>Awards & Achievements</SubSectionTitle>
           {awards.map((award, index) => (
             <AwardItem key={index}>
-              <AwardName>{award.name} ({award.year})</AwardName>
+              <AwardName $highlighted={award.name.includes('*')}>{award.name} ({award.year})</AwardName>
               <div style={{ fontSize: '10px' }}>{award.issuer}</div>
               {award.description && <AwardDescription>{award.description}</AwardDescription>}
             </AwardItem>
@@ -112,10 +120,13 @@ const Qualifications = ({ skills, languages, awards }) => {
           <SubSection>
             <SubSectionTitle>Languages</SubSectionTitle>
             {languages.map((lang, index) => (
-              <LanguageItem key={index}>
-                <span>{lang.language}</span>
-                <span style={{ fontStyle: 'italic' }}>{lang.proficiency}</span>
-              </LanguageItem>
+              <div key={index}>
+                <LanguageItem>
+                  <span>{lang.language}</span>
+                  <span style={{ fontStyle: 'italic' }}>{lang.proficiency}</span>
+                </LanguageItem>
+                {lang.note && <LanguageNote>{lang.note}</LanguageNote>}
+              </div>
             ))}
           </SubSection>
         )}
