@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ProfileContainer = styled.div`
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 `;
 
 const Summary = styled.p`
   font-size: 12px;
-  line-height: 1.4;
-  margin: 0 0 8px 0;
+  line-height: 1.3;
+  margin: 0;
   color: #333;
   text-align: justify;
 `;

@@ -1,52 +1,29 @@
-// CV Data - Replace with your own information
+// CV Data
 
 // Basic Personal Information
 export const personalInfo = {
   name: "Nguyen Minh Duc",
-  title: "Software Developer",
+  title: "Backend Developer Intern",
   email: "nmduc7904@gmail.com",
   phone: "+84 392932661",
-  dateOfBirth: "07/09/2004",
   location: "Ha Noi City, Vietnam",
-  facebook: "www.facebook.com/nm.duc7904",
-  linkedin: "www.linkedin.com/in/đức-nguyễn-minh-624ba5306",
-  photoUrl: "https://via.placeholder.com/100x120", // Placeholder image - replace with your actual photo URL
-  cvUrl: "https://my-cv-ashen-seven.vercel.app/" // Online CV URL
+  github: "github.com/Minhduc7904",
+  portfolio: "my-cv-ashen-seven.vercel.app"
 };
 
 // Profile Section (Professional Summary)
 export const profile = {
-  summary: "Fourth-year Computer Science student focused on full-stack development with React, NestJS, .NET, Flutter, REST APIs, realtime features, and SQL databases. Strong competitive programming background and seeking a full-stack developer internship.",
-  highlights: [
-
-  ]
+  summary: "Fourth-year Computer Science student seeking a Backend Developer Internship. I am a fast learner with a strong work ethic, a problem-solving mindset, and a willingness to listen to feedback and continuously improve. I enjoy collaborating with others, taking ownership of assigned tasks, and learning new technologies to solve practical problems. I have hands-on experience building and deploying backend systems with NestJS, .NET 8, MySQL, SQL Server, SignalR, Socket.IO, and Docker, including an education platform serving approximately 1,000 students. Third Prize winner at the Vietnam Student Informatics Olympiad 2025.",
+  highlights: []
 };
 
-// Employment History (Work Experience)
+// Project Experience
 export const employmentHistory = [
   {
-    company: "Beacon - Safety Social Mobile Platform",
-    position: "Lead Developer",
-    period: "Apr 2026 - Jun 2026",
-    description: "Safety social platform with Flutter mobile app, .NET 8 API, and React admin dashboard for authentication, safety check-ins, emergency contacts, friends, realtime chat, posts, reports, media uploads, notifications, and RBAC.",
-    github: "https://github.com/Minhduc7904/Beacon | https://github.com/dongvanhao/Beacon-CA | https://github.com/Minhduc7904/Beacon_admin",
-    githubLinks: [
-      { label: "Mobile App", url: "https://github.com/Minhduc7904/Beacon" },
-      { label: "Backend API", url: "https://github.com/dongvanhao/Beacon-CA" },
-      { label: "Admin Dashboard", url: "https://github.com/Minhduc7904/Beacon_admin" }
-    ],
-    responsibilities: [
-      "Built Flutter app with Clean Architecture, Riverpod, GoRouter, Dio, secure storage, Isar cache, FCM, camera, geolocation, and media flows",
-      "Implemented layered .NET 8 APIs with EF Core, SQL Server, JWT, validation, SignalR realtime events, MinIO, Hangfire, and health checks",
-      "Developed React/Vite admin dashboard for users, admins, roles, permissions, posts, reports, audit logs, statistics, and system health"
-    ],
-    technologies: "Flutter, Riverpod, .NET 8, EF Core, SQL Server, SignalR, MinIO, React, TypeScript"
-  },
-  {
-    company: "Beemath Website",
+    company: "BeeEdu - Education Platform for Toan Thay Bee",
     position: "Full-stack Developer",
     period: "Oct 2025 - Present",
-    description: "Production education platform for a math learning center, rebuilt with NestJS and ReactJS for around 1,000 students. Includes online exams, AI-assisted exam upload, CMS workflows, and VPS deployment. Live at https://beeedu.vn/.",
+    description: "Production education platform for a math learning center, rebuilt with NestJS and ReactJS for around 1,000 students. Supports online exams, content management, AI-assisted document processing, and VPS deployment. Live at https://beeedu.vn/.",
     github: "https://github.com/Minhduc7904/admin_frontend | https://github.com/Minhduc7904/BEE | https://github.com/Minhduc7904/student-frontend",
     githubLinks: [
       { label: "Admin Frontend", url: "https://github.com/Minhduc7904/admin_frontend" },
@@ -54,12 +31,32 @@ export const employmentHistory = [
       { label: "Student Frontend", url: "https://github.com/Minhduc7904/student-frontend" }
     ],
     responsibilities: [
-      "Rebuilt platform with NestJS REST APIs, ReactJS/Redux frontends, MySQL schema design, and Tailwind CSS interfaces",
-      "Implemented realtime exams with Socket.IO and AI-assisted workflows for uploading and processing exam content",
-      "Deployed production system on VPS with Nginx reverse proxy and Cloudflare for DNS, CDN, and security"
+      "Designed and implemented backend modules with NestJS REST APIs for authentication, exam management, CMS workflows, student data, and admin operations",
+      "Built real-time online exam features with Socket.IO and MySQL-backed data models for submissions, timing, and exam state management",
+      "Implemented AI-assisted extraction and processing for uploaded exam documents, reducing manual content-entry work",
+      "Deployed and maintained the production system on a VPS with Nginx reverse proxy and Cloudflare for DNS, CDN, and security"
     ],
-    technologies: "ReactJS, Redux, Tailwind CSS, NestJS, Socket.IO, MySQL, Nginx, Cloudflare"
+    technologies: "NestJS, TypeScript, MySQL, Socket.IO, REST APIs, ReactJS, Redux, Tailwind CSS, Nginx, Cloudflare"
   },
+  {
+    company: "Beacon - Personal Safety and Social Networking Platform",
+    position: "Lead Full-stack Developer",
+    period: "Apr 2026 - Jun 2026",
+    description: "Personal safety and social networking platform with Flutter mobile app, .NET 8 backend API, and React admin dashboard. Includes authentication, safety check-ins, emergency contacts, friends, real-time chat, posts, reports, media uploads, notifications, and RBAC.",
+    github: "https://github.com/Minhduc7904/Beacon | https://github.com/dongvanhao/Beacon-CA | https://github.com/Minhduc7904/Beacon_admin",
+    githubLinks: [
+      { label: "Mobile App", url: "https://github.com/Minhduc7904/Beacon" },
+      { label: "Backend API", url: "https://github.com/dongvanhao/Beacon-CA" },
+      { label: "Admin Dashboard", url: "https://github.com/Minhduc7904/Beacon_admin" }
+    ],
+    responsibilities: [
+      "Led architecture and implementation across mobile, backend, and admin applications, coordinating feature boundaries and API contracts",
+      "Designed and implemented layered .NET 8 APIs for authentication, safety check-ins, emergency contacts, posts, reports, media, and messaging",
+      "Integrated EF Core, SQL Server, JWT, MinIO, Hangfire, health checks, and SignalR flows for chat, presence, seen status, unread counts, posts, and notifications",
+      "Built Flutter mobile features and React/Vite admin modules for user, role, post, report, statistic, media, and system-health management"
+    ],
+    technologies: ".NET 8, C#, EF Core, SQL Server, SignalR, JWT, MinIO, Hangfire, Docker, Flutter, Riverpod, React, TypeScript"
+  }
 ];
 
 // Education Information
@@ -71,7 +68,7 @@ export const education = [
     description: "Fourth-year student focused on software engineering and web development.",
     achievements: [
       "Current GPA: 3.6/4.0",
-      "Awarded academic scholarships for 4 consecutive semesters",
+      "Awarded academic scholarships for 4 consecutive semesters"
     ]
   }
 ];
@@ -80,29 +77,33 @@ export const education = [
 export const details = {
   skills: [
     {
-      name: "Programming Languages",
-      skills: ["JavaScript", "TypeScript", "Dart", "C++", "Python"]
-    },
-    {
-      name: "Frontend & Mobile",
-      skills: ["React", "Redux", "Tailwind CSS", "Flutter", "Riverpod"]
-    },
-    {
       name: "Backend",
-      skills: ["NestJS", ".NET 8", "REST APIs", "SignalR", "Socket.IO"]
+      skills: ["NestJS", ".NET 8", "REST APIs", "JWT", "SignalR", "Socket.IO"]
     },
     {
-      name: "Database & Tools",
-      skills: ["MySQL", "SQL Server", "MongoDB", "Docker", "Git"]
+      name: "Databases",
+      skills: ["MySQL", "SQL Server", "MongoDB", "EF Core"]
+    },
+    {
+      name: "Infrastructure & Tools",
+      skills: ["Docker", "Nginx", "Cloudflare", "MinIO", "Git", "Postman"]
+    },
+    {
+      name: "Programming Languages",
+      skills: ["TypeScript", "C#", "JavaScript", "C++", "Dart", "Python"]
+    },
+    {
+      name: "Additional",
+      skills: ["React", "Redux", "Tailwind CSS", "Flutter", "Riverpod"]
     }
   ],
   languages: [
     { language: "Vietnamese", proficiency: "Native" },
-    { language: "English", proficiency: "700 TOEIC", note: "internal university test" },
+    { language: "English", proficiency: "Intermediate", note: "TOEIC-equivalent 700 in university assessment" }
   ],
   awards: [
     {
-      name: "Third Prize - Vietnam Student Informatics Olympiad *",
+      name: "Third Prize - Vietnam Student Informatics Olympiad",
       issuer: "Vietnam Student Informatics Olympiad Committee",
       year: "2025",
       description: ""
@@ -116,12 +117,6 @@ export const details = {
     {
       name: "Consolation Prize - Vietnam Student Informatics Olympiad",
       issuer: "Vietnam Student Informatics Olympiad Committee",
-      year: "2024",
-      description: ""
-    },
-    {
-      name: "Top 308 - ICPC Northern Vietnam Regional Contest",
-      issuer: "International Collegiate Programming Contest (ICPC)",
       year: "2024",
       description: ""
     }
@@ -138,5 +133,3 @@ const cvData = {
 };
 
 export default cvData;
-
-// I am a fourth-year Computer Science student with hands-on experience in full-stack development through real projects such as Beacon and Beemath. I have worked with ReactJS, NestJS, .NET, Flutter, REST APIs, realtime features, SQL databases, Docker, and production deployment. I am proactive, willing to learn, and have a strong problem-solving background from competitive programming, including a Third Prize at the Vietnam Student Informatics Olympiad 2025. I am looking for an internship opportunity where I can contribute to real products and continue improving as a full-stack developer.

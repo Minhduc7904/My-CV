@@ -3,27 +3,25 @@ import styled from 'styled-components';
 
 const DetailsContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  gap: 15px;
-  font-size: 11px;
-`;
-
-const LeftColumn = styled.div`
-  flex: 0 0 15%;
-  display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  font-size: 11.5px;
 `;
 
-const RightColumn = styled.div`
-  flex: 0 0 42%;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+const SkillRow = styled.div`
+  line-height: 1.35;
 `;
 
-const SubSection = styled.div`
-  margin-bottom: 5px;
+const SkillCategory = styled.span`
+  font-weight: bold;
+  color: #222;
+`;
+
+const MetaGrid = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+  margin-top: 4px;
 `;
 
 const SubSectionTitle = styled.h4`
@@ -33,35 +31,8 @@ const SubSectionTitle = styled.h4`
   font-weight: bold;
 `;
 
-const SkillsList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-`;
-
-const Skill = styled.span`
-  background-color: #f0f0f0;
-  padding: 2px 6px;
-  border-radius: 10px;
-  font-size: 10px;
-  color: #333;
-`;
-
-const LanguageItem = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2px;
-`;
-
-const LanguageNote = styled.div`
-  font-size: 10px;
-  font-style: italic;
-  color: #555;
-  margin: -1px 0 3px 0;
-`;
-
 const AwardItem = styled.div`
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 `;
 
 const AwardName = styled.div`
@@ -70,67 +41,60 @@ const AwardName = styled.div`
   color: ${({ $highlighted }) => ($highlighted ? '#c99700' : 'inherit')};
 `;
 
-const AwardDescription = styled.div`
+const AwardIssuer = styled.div`
+  font-size: 10px;
+  color: #444;
+`;
+
+const LanguageItem = styled.div`
+  margin-bottom: 3px;
+  line-height: 1.3;
+`;
+
+const LanguageNote = styled.div`
   font-size: 10px;
   font-style: italic;
   color: #555;
 `;
 
-
-
-
-
 const Qualifications = ({ skills, languages, awards }) => {
   return (
     <DetailsContainer>
-
-
-      <RightColumn>
-        {skills && skills.length > 0 && (
-          <SubSection>
-            <SubSectionTitle>Skills</SubSectionTitle>
-            {skills.map((category, index) => (
-              <div key={index}>
-                <div style={{ fontWeight: 'bold', fontSize: '11px', marginBottom: '2px' }}>{category.name}</div>
-                <SkillsList>
-                  {category.skills.map((skill, skillIndex) => (
-                    <Skill key={skillIndex}>{skill}</Skill>
-                  ))}
-                </SkillsList>
-              </div>
-            ))}
-          </SubSection>
-        )}
-      </RightColumn>
-
-      {awards && awards.length > 0 && (
-        <SubSection>
-          <SubSectionTitle>Awards & Achievements</SubSectionTitle>
-          {awards.map((award, index) => (
-            <AwardItem key={index}>
-              <AwardName $highlighted={award.name.includes('*')}>{award.name} ({award.year})</AwardName>
-              <div style={{ fontSize: '10px' }}>{award.issuer}</div>
-              {award.description && <AwardDescription>{award.description}</AwardDescription>}
-            </AwardItem>
+      {skills && skills.length > 0 && (
+        <div>
+          {skills.map((category, index) => (
+            <SkillRow key={index}>
+              <SkillCategory>{category.name}:</SkillCategory> {category.skills.join(', ')}
+            </SkillRow>
           ))}
-        </SubSection>
+        </div>
       )}
-      <LeftColumn>
+
+      <MetaGrid>
+        {awards && awards.length > 0 && (
+          <div>
+            <SubSectionTitle>Awards</SubSectionTitle>
+            {awards.map((award, index) => (
+              <AwardItem key={index}>
+                <AwardName $highlighted={index === 0}>{award.name} ({award.year})</AwardName>
+                <AwardIssuer>{award.issuer}</AwardIssuer>
+              </AwardItem>
+            ))}
+          </div>
+        )}
+
         {languages && languages.length > 0 && (
-          <SubSection>
+          <div>
             <SubSectionTitle>Languages</SubSectionTitle>
             {languages.map((lang, index) => (
-              <div key={index}>
-                <LanguageItem>
-                  <span>{lang.language}</span>
-                  <span style={{ fontStyle: 'italic' }}>{lang.proficiency}</span>
-                </LanguageItem>
+              <LanguageItem key={index}>
+                <div><strong>{lang.language}:</strong> {lang.proficiency}</div>
                 {lang.note && <LanguageNote>{lang.note}</LanguageNote>}
-              </div>
+              </LanguageItem>
             ))}
-          </SubSection>
+          </div>
         )}
-      </LeftColumn>
+      </MetaGrid>
     </DetailsContainer>
   );
 };

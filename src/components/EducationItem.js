@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ItemContainer = styled.div`
-  margin-bottom: 12px; /* Slightly increased margin between items */
+  margin-bottom: 6px;
   display: flex;
   flex-direction: row;
   gap: 15px; /* Space between left and right columns */

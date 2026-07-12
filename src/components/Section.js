@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SectionContainer = styled.div`
-  margin-bottom: 10px; /* Reduced margin */
+  margin-bottom: 7px;
 `;
 
 const SectionTitle = styled.h3`
-  font-size: 16px; /* Smaller font size */
-  margin: 0 0 6px 0; /* Reduced margin */
+  font-size: 15px;
+  margin: 0 0 4px 0;
   color: #333;
   border-bottom: 1px solid #ddd;
-  padding-bottom: 3px; /* Reduced padding */
+  padding-bottom: 2px;
 `;
 
 const Section = ({ title, children }) => {

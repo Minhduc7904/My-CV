@@ -61,13 +61,17 @@ function App() {
     <AppContainer>
       <PrintButton onClick={handlePrint}>Print CV</PrintButton>
       <CVContainer>
-        <Header {...cvData.personalInfo} photoUrl={'470224468_1536748773663994_5966152628384594354_n.jpg'} />
+        <Header {...cvData.personalInfo} />
 
-        <Section title="Profile">
+        <Section title="Summary">
           <Profile {...cvData.profile} />
         </Section>
 
-        <Section title="Employment History">
+        <Section title="Technical Skills & Highlights">
+          <Qualifications {...cvData.details} />
+        </Section>
+
+        <Section title="Project Experience">
           {cvData.employmentHistory.map((exp, index) => (
             <ExperienceItem key={index} {...exp} />
           ))}
@@ -77,10 +81,6 @@ function App() {
           {cvData.education.map((edu, index) => (
             <EducationItem key={index} {...edu} />
           ))}
-        </Section>
-
-        <Section title="Qualifications">
-          <Qualifications {...cvData.details} />
         </Section>
       </CVContainer>
     </AppContainer>

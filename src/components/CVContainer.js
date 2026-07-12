@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // A4 paper dimensions: 210mm × 297mm
 const CVWrapper = styled.div`
   width: 210mm;
-  height: 297mm;
+  min-height: 297mm;
   margin: 0 auto;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -18,7 +18,7 @@ const CVWrapper = styled.div`
     box-shadow: none;
     margin: 0;
     width: 210mm;
-    height: 297mm;
+    min-height: 297mm;
     background: white;
     background-color: white;
     padding: 3mm 3mm; /* Minimal padding for printing */

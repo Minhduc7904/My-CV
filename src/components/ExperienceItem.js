@@ -2,55 +2,53 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ItemContainer = styled.div`
-  margin-bottom: 12px; /* Slightly increased margin between items */
+  margin-bottom: 9px;
   display: flex;
   flex-direction: row;
-  gap: 15px; /* Space between left and right columns */
+  gap: 16px;
 `;
 
 const LeftColumn = styled.div`
-  flex: 0 0 30%; /* Fixed width of 30% */
+  flex: 0 0 30%;
 `;
 
 const RightColumn = styled.div`
-  flex: 1; /* Takes the remaining space */
+  flex: 1;
 `;
 
 const Company = styled.h4`
-  font-size: 14px; /* Smaller font size */
-  margin: 0 0 2px 0; /* Reduced margin */
-  color: #333;
+  font-size: 14px;
+  margin: 0 0 2px 0;
+  color: #222;
   font-weight: bold;
 `;
 
 const Position = styled.div`
-  font-size: 13px; /* Smaller font size */
-  margin: 0 0 2px 0; /* Reduced margin */
-  font-weight: 500;
+  font-size: 13px;
+  margin: 0 0 2px 0;
+  font-weight: 600;
 `;
 
 const Period = styled.div`
-  font-size: 12px; /* Smaller font size */
+  font-size: 11.5px;
   color: #666;
   font-style: italic;
-  margin-bottom: 2px; /* Reduced margin */
+  margin-bottom: 2px;
   display: inline-block;
 `;
 
 const Description = styled.div`
-  font-size: 12px; /* Smaller font size */
-  color: #444;
-  line-height: 1.3; /* Tighter line height */
-  margin-bottom: 4px;
+  font-size: 12px;
+  color: #333;
+  line-height: 1.28;
+  margin-bottom: 3px;
 `;
 
 const GithubLink = styled.a`
   font-size: 10px;
   color: #0066cc;
   text-decoration: none;
-  display: block;
-  margin-bottom: 2px;
-  word-break: break-all;
+  display: inline;
 
   &:hover {
     text-decoration: underline;
@@ -62,35 +60,37 @@ const TechnologiesLeft = styled.div`
   color: #555;
   font-style: italic;
   margin-top: 3px;
-  line-height: 1.3;
+  line-height: 1.25;
+`;
+
+const GithubLinks = styled.div`
+  margin-top: 3px;
+  font-size: 10px;
+  line-height: 1.25;
 `;
 
 const BulletList = styled.ul`
-  margin: 2px 0 0 0; /* Reduced margin */
-  padding-left: 16px; /* Reduced padding */
+  margin: 2px 0 0 0;
+  padding-left: 16px;
 `;
 
 const BulletItem = styled.li`
-  margin-bottom: 1px; /* Reduced margin */
-  font-size: 12px; /* Smaller font size */
-  line-height: 1.3; /* Tighter line height */
+  margin-bottom: 1px;
+  font-size: 12px;
+  line-height: 1.28;
 `;
 
 const ExperienceItem = ({ company, position, period, description, responsibilities, technologies, github, githubLinks }) => {
-  // Function to convert URLs in text to clickable links
   const createMarkup = (text) => {
     if (!text) return { __html: '' };
-
-    // Regular expression to find URLs
     const urlRegex = /(https?:\/\/[^\s]+)/g;
-
-    // Replace URLs with anchor tags
     const htmlContent = text.replace(urlRegex, url =>
       `<a href="${url}" target="_blank" rel="noopener noreferrer" style="color: #0066cc; text-decoration: none;">${url}</a>`
     );
 
     return { __html: htmlContent };
   };
+
   return (
     <ItemContainer>
       <LeftColumn>
@@ -98,14 +98,17 @@ const ExperienceItem = ({ company, position, period, description, responsibiliti
         <Position>{position}</Position>
         <Period>{period}</Period>
         {githubLinks && githubLinks.length > 0 ? (
-          <div style={{ marginTop: '4px' }}>
-            <span style={{ fontSize: '10px', fontWeight: 'bold' }}>GitHub:</span>
+          <GithubLinks>
+            <span style={{ fontWeight: 'bold' }}>GitHub:</span>{' '}
             {githubLinks.map((link, index) => (
-              <GithubLink key={index} href={link.url} target="_blank" rel="noopener noreferrer">
-                • {link.label}
-              </GithubLink>
+              <React.Fragment key={link.url}>
+                <GithubLink href={link.url} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                </GithubLink>
+                {index < githubLinks.length - 1 ? ' | ' : ''}
+              </React.Fragment>
             ))}
-          </div>
+          </GithubLinks>
         ) : github ? (
           <GithubLink href={github} target="_blank" rel="noopener noreferrer" style={{ marginTop: '4px' }}>
             <strong>GitHub:</strong> {github}

@@ -2,124 +2,85 @@ import React from 'react';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.div`
-  margin-bottom: 12px; /* Reduced margin */
+  margin-bottom: 14px;
   border-bottom: 1px solid #333;
-  padding-bottom: 8px; /* Reduced padding */
-  display: flex;
-  flex-direction: row; /* Changed to row for two-column layout */
-  gap: 15px; /* Gap between photo and info */
+  padding-bottom: 10px;
 `;
 
-const PhotoContainer = styled.div`
-  flex: 0 0 auto; /* Don't grow or shrink */
-  width: 100px; /* Fixed width for photo */
-  height: 120px; /* Fixed height for photo */
-  overflow: hidden; /* Hide overflow */
-  border: 1px solid #ddd; /* Light border */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Photo = styled.img`
-  width: 100%; /* Fill container */
-  height: 100%; /* Fill container */
-  object-fit: cover; /* Cover the container */
-`;
-
-const InfoContainer = styled.div`
-  flex: 1; /* Take remaining space */
-  display: flex;
-  flex-direction: column;
-`;
-
-const NameContainer = styled.div`
+const NameRow = styled.div`
   display: flex;
   align-items: baseline;
-  margin-bottom: 2px;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 5px;
 `;
 
 const Name = styled.h1`
-  font-size: 24px; /* Smaller font size */
+  font-size: 26px;
   margin: 0;
-  color: #333;
+  color: #222;
 `;
 
-const JobTitle = styled.span`
+const JobTitle = styled.div`
   font-size: 16px;
-  margin-left: 10px;
-  color: #555;
-  font-weight: normal;
-`;
-
-const Title = styled.h2`
-  font-size: 16px; /* Smaller font size */
-  font-weight: normal;
-  margin: 0 0 8px 0; /* Reduced margin */
-  color: #555;
-  display: none; /* Hide the original title since we're showing it next to the name */
+  color: #333;
+  font-weight: 600;
+  white-space: nowrap;
 `;
 
 const ContactInfo = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 8px; /* Further reduced gap */
-  font-size: 10px; /* Even smaller font size */
+  gap: 6px 12px;
+  font-size: 10.5px;
+  line-height: 1.35;
 `;
 
 const ContactItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 3px; /* Reduced gap */
+  color: #333;
 `;
 
-const Header = ({ name, title, email, phone, dateOfBirth, location, facebook, linkedin, photoUrl, cvUrl }) => {
+const ContactLink = styled.a`
+  color: #0066cc;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const externalUrl = (value) => {
+  if (!value) return '';
+  return value.startsWith('http') ? value : `https://${value}`;
+};
+
+const Header = ({ name, title, email, phone, location, github, linkedin, portfolio }) => {
   return (
     <HeaderContainer>
-      <PhotoContainer>
-        {photoUrl ? (
-          <Photo src={photoUrl} alt={`${name}'s photo`} />
-        ) : (
-          <div style={{ 
-            width: '100%', 
-            height: '100%', 
-            backgroundColor: '#f0f0f0', 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'center',
-            fontSize: '10px',
-            color: '#777',
-            textAlign: 'center',
-            padding: '5px'
-          }}>
-            Add your photo here
-          </div>
+      <NameRow>
+        <Name>{name}</Name>
+        <JobTitle>{title}</JobTitle>
+      </NameRow>
+      <ContactInfo>
+        {email && <ContactItem>Email: {email}</ContactItem>}
+        {phone && <ContactItem>Phone: {phone}</ContactItem>}
+        {github && (
+          <ContactItem>
+            GitHub: <ContactLink href={externalUrl(github)} target="_blank" rel="noopener noreferrer">{github}</ContactLink>
+          </ContactItem>
         )}
-      </PhotoContainer>
-      
-      <InfoContainer>
-        <NameContainer>
-          <Name>{name}</Name>
-          <JobTitle>Software Developer</JobTitle>
-        </NameContainer>
-        <Title>{title}</Title>
-        <ContactInfo>
-          {email && <ContactItem><span style={{ fontSize: '9px' }}>📧</span> {email}</ContactItem>}
-          {phone && <ContactItem><span style={{ fontSize: '9px' }}>📱</span> {phone}</ContactItem>}
-          {location && <ContactItem><span style={{ fontSize: '9px' }}>📍</span> {location}</ContactItem>}
-          {facebook && <ContactItem><span style={{ fontSize: '9px' }}>📘</span> <a href={`https://${facebook}`} target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc', textDecoration: 'none' }}>{facebook}</a></ContactItem>}
-          {linkedin && <ContactItem><span style={{ fontSize: '9px' }}>💼</span> <a href={`https://${linkedin}`} target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc', textDecoration: 'none' }}>{linkedin}</a></ContactItem>}
-          {dateOfBirth && <ContactItem><span style={{ fontSize: '9px' }}>DOB</span> {dateOfBirth}</ContactItem>}
-          {cvUrl && (
-            <ContactItem>
-              <span style={{ fontSize: '9px' }}>📄</span>
-              <a href={cvUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#0066cc', textDecoration: 'none' }}>
-                Online CV
-              </a>
-            </ContactItem>
-          )}
-        </ContactInfo>
-      </InfoContainer>
+        {linkedin && (
+          <ContactItem>
+            LinkedIn: <ContactLink href={externalUrl(linkedin)} target="_blank" rel="noopener noreferrer">{linkedin}</ContactLink>
+          </ContactItem>
+        )}
+        {portfolio && (
+          <ContactItem>
+            Portfolio: <ContactLink href={externalUrl(portfolio)} target="_blank" rel="noopener noreferrer">{portfolio}</ContactLink>
+          </ContactItem>
+        )}
+        {location && <ContactItem>Location: {location}</ContactItem>}
+      </ContactInfo>
     </HeaderContainer>
   );
 };
