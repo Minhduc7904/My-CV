@@ -6,6 +6,7 @@ export const personalInfo = {
   title: "Backend Developer Intern",
   email: "nmduc7904@gmail.com",
   phone: "+84 392932661",
+  dateOfBirth: "07/09/2004",
   location: "Ha Noi City, Vietnam",
   github: "github.com/Minhduc7904",
   portfolio: "my-cv-ashen-seven.vercel.app"
@@ -13,7 +14,7 @@ export const personalInfo = {
 
 // Profile Section (Professional Summary)
 export const profile = {
-  summary: "Fourth-year Computer Science student seeking a Backend Developer Internship. I am a fast learner with a strong work ethic, a problem-solving mindset, and a willingness to listen to feedback and continuously improve. I enjoy collaborating with others, taking ownership of assigned tasks, and learning new technologies to solve practical problems. I have hands-on experience building and deploying backend systems with NestJS, .NET 8, MySQL, SQL Server, SignalR, Socket.IO, and Docker, including an education platform serving approximately 1,000 students. Third Prize winner at the Vietnam Student Informatics Olympiad 2025.",
+  summary: "Fourth-year Computer Science student seeking a Backend Developer Internship. I am a fast learner with a strong work ethic, a problem-solving mindset, and a willingness to listen to feedback and continuously improve. I enjoy collaborating with others, taking ownership of assigned tasks, and learning new technologies to solve practical problems. I have hands-on experience building and deploying backend systems with NestJS, .NET 8, MySQL, SQL Server, SignalR, Socket.IO, and Docker. Third Prize winner at the Vietnam Student Informatics Olympiad 2025.",
   highlights: []
 };
 
@@ -24,19 +25,20 @@ export const employmentHistory = [
     position: "Full-stack Developer",
     period: "Oct 2025 - Present",
     description: "Production education platform for a math learning center, rebuilt with NestJS and ReactJS for around 1,000 students. Supports online exams, content management, AI-assisted document processing, and VPS deployment. Live at https://beeedu.vn/.",
-    github: "https://github.com/Minhduc7904/admin_frontend | https://github.com/Minhduc7904/BEE | https://github.com/Minhduc7904/student-frontend",
+    github: "https://github.com/Minhduc7904/admin_frontend | https://github.com/Minhduc7904/BEE | https://github.com/Minhduc7904/student-frontend | https://github.com/Minhduc7904/seo_frontend",
     githubLinks: [
       { label: "Admin Frontend", url: "https://github.com/Minhduc7904/admin_frontend" },
       { label: "Backend", url: "https://github.com/Minhduc7904/BEE" },
-      { label: "Student Frontend", url: "https://github.com/Minhduc7904/student-frontend" }
+      { label: "Student Frontend", url: "https://github.com/Minhduc7904/student-frontend" },
+      { label: "SEO Frontend", url: "https://github.com/Minhduc7904/seo_frontend" }
     ],
     responsibilities: [
-      "Designed and implemented backend modules with NestJS REST APIs for authentication, exam management, CMS workflows, student data, and admin operations",
-      "Built real-time online exam features with Socket.IO and MySQL-backed data models for submissions, timing, and exam state management",
-      "Implemented AI-assisted extraction and processing for uploaded exam documents, reducing manual content-entry work",
-      "Deployed and maintained the production system on a VPS with Nginx reverse proxy and Cloudflare for DNS, CDN, and security"
+      "Built the shared NestJS backend with Clean Architecture, Prisma/MySQL, JWT, Socket.IO, media storage, and integrations for payment, email, Zalo, and AI services",
+      "Developed Student/Admin React-Vite apps and the public SEO website with Next.js App Router, SSR pages, and API-driven content for courses, teachers, news, documents, and SEO media",
+      "Implemented real-time online exams and AI-assisted extraction/processing of uploaded exam documents to reduce manual content-entry work",
+      "Set up CI/CD and VPS deployment for four repos with GitHub Actions, smoke tests, SSH deploy, Docker service rebuild/recreate, health checks, Nginx, MySQL, MinIO, and Cloudflare"
     ],
-    technologies: "NestJS, TypeScript, MySQL, Socket.IO, REST APIs, ReactJS, Redux, Tailwind CSS, Nginx, Cloudflare"
+    technologies: "NestJS, TypeScript, Prisma, MySQL, Socket.IO, JWT, MinIO, React/Vite, Redux, Next.js, Tailwind CSS, Docker, Nginx, GitHub Actions, Cloudflare"
   },
   {
     company: "Beacon - Personal Safety and Social Networking Platform",
@@ -67,8 +69,7 @@ export const education = [
     period: "2022 - Present",
     description: "Fourth-year student focused on software engineering and web development.",
     achievements: [
-      "Current GPA: 3.6/4.0",
-      "Awarded academic scholarships for 4 consecutive semesters"
+      "GPA: 3.6/4.0; academic scholarships for 4 consecutive semesters"
     ]
   }
 ];
@@ -86,7 +87,7 @@ export const details = {
     },
     {
       name: "Infrastructure & Tools",
-      skills: ["Docker", "Nginx", "Cloudflare", "MinIO", "Git", "Postman"]
+      skills: ["CI/CD", "Docker", "Nginx", "Cloudflare", "MinIO", "Git", "Postman"]
     },
     {
       name: "Programming Languages",

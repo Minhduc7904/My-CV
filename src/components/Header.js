@@ -54,7 +54,7 @@ const externalUrl = (value) => {
   return value.startsWith('http') ? value : `https://${value}`;
 };
 
-const Header = ({ name, title, email, phone, location, github, linkedin, portfolio }) => {
+const Header = ({ name, title, email, phone, dateOfBirth, location, github, linkedin, portfolio }) => {
   return (
     <HeaderContainer>
       <NameRow>
@@ -64,6 +64,7 @@ const Header = ({ name, title, email, phone, location, github, linkedin, portfol
       <ContactInfo>
         {email && <ContactItem>Email: {email}</ContactItem>}
         {phone && <ContactItem>Phone: {phone}</ContactItem>}
+        {dateOfBirth && <ContactItem>DOB: {dateOfBirth}</ContactItem>}
         {github && (
           <ContactItem>
             GitHub: <ContactLink href={externalUrl(github)} target="_blank" rel="noopener noreferrer">{github}</ContactLink>
