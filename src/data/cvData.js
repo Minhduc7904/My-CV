@@ -5,7 +5,7 @@ export const personalInfo = {
   name: "Nguyen Minh Duc",
   title: "Backend Developer Intern",
   email: "nmduc7904@gmail.com",
-  phone: "+84 392932661",
+  phone: "0392923661",
   dateOfBirth: "07/09/2004",
   location: "Ha Noi City, Vietnam",
   github: "github.com/Minhduc7904",
@@ -14,7 +14,7 @@ export const personalInfo = {
 
 // Profile Section (Professional Summary)
 export const profile = {
-  summary: "Fourth-year Computer Science student seeking a Backend Developer Internship. I am a fast learner with a strong work ethic, a problem-solving mindset, and a willingness to listen to feedback and continuously improve. I enjoy collaborating with others, taking ownership of assigned tasks, and learning new technologies to solve practical problems. I have hands-on experience building and deploying backend systems with NestJS, .NET 8, MySQL, SQL Server, SignalR, Socket.IO, and Docker. Third Prize winner at the Vietnam Student Informatics Olympiad 2025.",
+  summary: "Fourth-year Computer Science student seeking a Backend Developer Internship. I am a fast learner with a strong work ethic, a problem-solving mindset, and a willingness to listen to feedback and continuously improve. I have hands-on experience building and deploying backend systems with NestJS, TypeScript, MySQL, Prisma, Socket.IO, Docker, and CI/CD. Third Prize winner at the Vietnam Student Informatics Olympiad 2025.",
   highlights: []
 };
 
@@ -33,18 +33,18 @@ export const employmentHistory = [
       { label: "SEO Frontend", url: "https://github.com/Minhduc7904/seo_frontend" }
     ],
     responsibilities: [
-      "Built the shared NestJS backend with Clean Architecture, Prisma/MySQL, JWT, Socket.IO, media storage, and integrations for payment, email, Zalo, and AI services",
+      "Built the shared NestJS backend with Clean Architecture, Prisma/MySQL, JWT, Socket.IO, media storage, and integrations for SePay tuition payment, email, Zalo, and AI services",
       "Developed Student/Admin React-Vite apps and the public SEO website with Next.js App Router, SSR pages, and API-driven content for courses, teachers, news, documents, and SEO media",
-      "Implemented real-time online exams and AI-assisted extraction/processing of uploaded exam documents to reduce manual content-entry work",
+      "Implemented real-time online exams, AI-assisted extraction/processing of uploaded exam documents, and online tuition payment flows using SePay",
       "Set up CI/CD and VPS deployment for four repos with GitHub Actions, smoke tests, SSH deploy, Docker service rebuild/recreate, health checks, Nginx, MySQL, MinIO, and Cloudflare"
     ],
-    technologies: "NestJS, TypeScript, Prisma, MySQL, Socket.IO, JWT, MinIO, React/Vite, Redux, Next.js, Tailwind CSS, Docker, Nginx, GitHub Actions, Cloudflare"
+    technologies: "NestJS, TypeScript, Prisma, MySQL, Socket.IO, JWT, SePay, MinIO, React/Vite, Redux, Next.js, Tailwind CSS, Docker, Nginx, GitHub Actions, Cloudflare"
   },
   {
     company: "Beacon - Personal Safety and Social Networking Platform",
     position: "Lead Full-stack Developer",
     period: "Apr 2026 - Jun 2026",
-    description: "Personal safety and social networking platform with Flutter mobile app, .NET 8 backend API, and React admin dashboard. Includes authentication, safety check-ins, emergency contacts, friends, real-time chat, posts, reports, media uploads, notifications, and RBAC.",
+    description: "Personal safety and social networking platform with Flutter mobile app, backend API, and React admin dashboard. Includes authentication, safety check-ins, emergency contacts, friends, real-time chat, posts, reports, media uploads, notifications, and RBAC.",
     github: "https://github.com/Minhduc7904/Beacon | https://github.com/dongvanhao/Beacon-CA | https://github.com/Minhduc7904/Beacon_admin",
     githubLinks: [
       { label: "Mobile App", url: "https://github.com/Minhduc7904/Beacon" },
@@ -53,11 +53,11 @@ export const employmentHistory = [
     ],
     responsibilities: [
       "Led architecture and implementation across mobile, backend, and admin applications, coordinating feature boundaries and API contracts",
-      "Designed and implemented layered .NET 8 APIs for authentication, safety check-ins, emergency contacts, posts, reports, media, and messaging",
-      "Integrated EF Core, SQL Server, JWT, MinIO, Hangfire, health checks, and SignalR flows for chat, presence, seen status, unread counts, posts, and notifications",
+      "Designed backend APIs for authentication, safety check-ins, emergency contacts, posts, reports, media, and messaging",
+      "Integrated JWT, media storage, background jobs, health checks, and real-time flows for chat, presence, seen status, unread counts, posts, and notifications",
       "Built Flutter mobile features and React/Vite admin modules for user, role, post, report, statistic, media, and system-health management"
     ],
-    technologies: ".NET 8, C#, EF Core, SQL Server, SignalR, JWT, MinIO, Hangfire, Docker, Flutter, Riverpod, React, TypeScript"
+    technologies: ".NET 8, C#, EF Core, SQL Server, SignalR, JWT, MinIO, Hangfire, Docker, Flutter, Riverpod, React/Vite, TypeScript"
   }
 ];
 
@@ -79,11 +79,11 @@ export const details = {
   skills: [
     {
       name: "Backend",
-      skills: ["NestJS", ".NET 8", "REST APIs", "JWT", "SignalR", "Socket.IO"]
+      skills: ["NestJS", "Node.js", "REST APIs", "JWT", "Socket.IO", "WebSocket"]
     },
     {
       name: "Databases",
-      skills: ["MySQL", "SQL Server", "MongoDB", "EF Core"]
+      skills: ["MySQL", "Prisma"]
     },
     {
       name: "Infrastructure & Tools",
@@ -91,7 +91,7 @@ export const details = {
     },
     {
       name: "Programming Languages",
-      skills: ["TypeScript", "C#", "JavaScript", "C++", "Dart", "Python"]
+      skills: ["TypeScript", "JavaScript", "C++", "Dart", "Python"]
     },
     {
       name: "Additional",
